@@ -6,20 +6,57 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>800</width>
+    <height>500</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>500</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>QpassX</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>781</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <column>
+     <property name="text">
+      <string>Title</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Username</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Url</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Note</string>
+     </property>
+    </column>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>800</width>
      <height>21</height>
     </rect>
    </property>
@@ -72,8 +109,18 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actionNew"/>
    <addaction name="actionOpen"/>
+   <addaction name="actionExport_database"/>
+   <addaction name="separator"/>
+   <addaction name="actionNew_entry"/>
+   <addaction name="actionEdit_entry"/>
+   <addaction name="actionDelete_entry"/>
+   <addaction name="separator"/>
+   <addaction name="actionCopy_username"/>
+   <addaction name="actionCopy_password"/>
+   <addaction name="actionOpen_url"/>
+   <addaction name="separator"/>
+   <addaction name="actionFind"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
@@ -92,6 +139,9 @@
    </property>
    <property name="text">
     <string>Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
    </property>
   </action>
   <action name="actionClear_history">
@@ -114,8 +164,8 @@
   </action>
   <action name="actionDatabase_settings">
    <property name="icon">
-    <iconset>
-     <normaloff>icons/icon8/Services_48px.png</normaloff>icons/icon8/Services_48px.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/Services_48px.png</normaloff>:/icons/icon8/Services_48px.png</iconset>
    </property>
    <property name="text">
     <string>Database settings</string>
@@ -147,6 +197,9 @@
    <property name="text">
     <string>Quit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionSettings">
    <property name="icon">
@@ -173,6 +226,87 @@
    </property>
    <property name="text">
     <string>Check for updates</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/Binoculars_48px.png</normaloff>:/icons/icon8/Binoculars_48px.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find</string>
+   </property>
+   <property name="toolTip">
+    <string>Find</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionEdit_entry">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/edit-tag.png</normaloff>:/icons/icon8/edit-tag.png</iconset>
+   </property>
+   <property name="text">
+    <string>edit entry</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionDelete_entry">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/Remove Tag_48px.png</normaloff>:/icons/icon8/Remove Tag_48px.png</iconset>
+   </property>
+   <property name="text">
+    <string>delete entry</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionNew_entry">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/new-tag.png</normaloff>:/icons/icon8/new-tag.png</iconset>
+   </property>
+   <property name="text">
+    <string>new entry</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionCopy_username">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/About_48px.png</normaloff>:/icons/icon8/About_48px.png</iconset>
+   </property>
+   <property name="text">
+    <string>copy username</string>
+   </property>
+  </action>
+  <action name="actionCopy_password">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/Password_48px.png</normaloff>:/icons/icon8/Password_48px.png</iconset>
+   </property>
+   <property name="text">
+    <string>copy password</string>
+   </property>
+  </action>
+  <action name="actionOpen_url">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/icon8/Launched Rocket_48px.png</normaloff>:/icons/icon8/Launched Rocket_48px.png</iconset>
+   </property>
+   <property name="text">
+    <string>open url</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
  </widget>
