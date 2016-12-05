@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/icon8/Open Folder_48px_3.png</file>
+        <file>icons/icon8/Add Database_48px.png</file>
+        <file>icons/icon8/Key_48px.png</file>
+        <file>icons/icon8/Services_48px.png</file>
+        <file>icons/icon8/Shutdown_48px.png</file>
+        <file>icons/icon8/Delete_48px.png</file>
+        <file>icons/icon8/Information_48px.png</file>
+        <file>icons/icon8/Rotate Right_48px.png</file>
+        <file>icons/icon8/Vertical Settings Mixer_48px.png</file>
+        <file>icons/icon8/Software Installer_48px.png</file>
+        <file>icons/icon8/Upload_48px.png</file>
+    </qresource>
+</RCC>
