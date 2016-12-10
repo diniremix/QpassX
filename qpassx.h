@@ -2,6 +2,8 @@
 #define QPASSX_H
 
 #include <QMainWindow>
+#include "qdatabase.h"
+#include <QFileDialog>
 
 namespace Ui {
   class QpassX;
@@ -54,6 +56,7 @@ private slots:
 
 private:
   Ui::QpassX *ui;
+  QDatabase *db;
 };
 
 #endif // QPASSX_H
