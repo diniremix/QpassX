@@ -21,6 +21,7 @@ class QDatabase
 {
 public:
   QDatabase();
+  ~QDatabase();
   bool createDB(QString path);
   bool openDB(QString path);
   void search(QString table, int id);

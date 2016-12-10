@@ -139,3 +139,8 @@ void QDatabase::closeDB(){
       db.close();
   }
 }
+
+QDatabase::~QDatabase()
+{
+    closeDB();
+}
