@@ -6,6 +6,7 @@ formnew::formnew(QWidget *parent) :
   ui(new Ui::formnew)
 {
   ui->setupUi(this);
+  this->setWindowFlags(Qt::WindowTitleHint |  Qt::WindowCloseButtonHint| Qt::WindowSystemMenuHint);
 }
 
 formnew::~formnew()
