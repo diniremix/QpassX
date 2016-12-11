@@ -25,7 +25,6 @@ void QpassX::on_actionNew_triggered()
 
 
   formnew *formnewdb = new formnew();
-  formnewdb->setWindowModality(Qt::ApplicationModal);
   formnewdb->show();
 }
 
