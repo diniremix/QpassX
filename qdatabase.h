@@ -26,7 +26,7 @@ public:
   bool openDB(QString path);
   void search(QString table, int id);
   void select(QList<QString> tables, QList<QString> fields, QString conds);
-  QSqlQuery execQuery(QString sqlQuery, QString params);
+  bool execQuery(QString sqlQuery, QString params);
   void closeDB();
   QSqlDatabase db;
 };

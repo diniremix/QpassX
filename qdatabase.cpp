@@ -11,8 +11,6 @@ bool QDatabase::createDB(QString path)
   QDir dir;
   QString dbName = dir.filePath(path);
   db= QSqlDatabase::addDatabase("QSQLITE");
-  qDebug() <<"pass::"<< db.password();
-
   db.setDatabaseName(dbName);
   qDebug() << "Creating database:" << dbName;
 
@@ -25,24 +23,25 @@ bool QDatabase::createDB(QString path)
 
       //Describe QPASSXINFO
       ret=query.exec("create table if not exists  qpassxinfo ( "
-          "id INTEGER primary key autoincrement NOT NULL, "
-          "title VARCHAR(255) NOT NULL, "
-          "username VARCHAR(64) NOT NULL, "
-          "password VARCHAR(64) NOT NULL, "
-          "url TEXT VARCHAR(255) DEFAULT (NULL), "
-          "notes TEXT DEFAULT (NULL), "
-          "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP )"
-      );
+                     "id INTEGER primary key autoincrement NOT NULL, "
+                     "title VARCHAR(255) NOT NULL, "
+                     "username VARCHAR(64) NOT NULL, "
+                     "password VARCHAR(64) NOT NULL, "
+                     "url TEXT VARCHAR(255) DEFAULT (NULL), "
+                     "notes TEXT DEFAULT (NULL), "
+                     "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP )"
+                     );
       qDebug() << "creating QPASSXINFO" << ret;
 
       //Describe QPASSXSCHEME
       ret=query.exec("create table if not exists qpassxscheme ("
-          "id INTEGER primary key autoincrement NOT NULL, "
-          "usrnm VARCHAR(64) NOT NULL, "
-          "psswd VARCHAR(64) NOT NULL, "
-          "apikey VARCHAR(32) NOT NULL, "
-          "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP )"
-      );
+                     "id INTEGER primary key autoincrement NOT NULL, "
+                     "usrnm VARCHAR(64) NOT NULL, "
+                     "psswd VARCHAR(64) NOT NULL, "
+                     "apikey VARCHAR(32) NOT NULL, "
+                     "version VARCHAR(3) NOT NULL, "
+                     "timestamp DATETIME DEFAULT CURRENT_TIMESTAMP )"
+                     );
       qDebug() << "creating QPASSXSCHEME" << ret;
 
       return true;
@@ -117,30 +116,26 @@ void QDatabase::select(QList<QString> tables, QList<QString> fields, QString con
 
 }
 
-QSqlQuery QDatabase::execQuery(QString sqlQuery, QString params)
+bool QDatabase::execQuery(QString sqlQuery, QString params)
 {
   bool ret= false;
   QSqlQuery query;
+
   qDebug() << "consulta: " << sqlQuery;
+
   ret= query.exec(sqlQuery);
   qDebug() << "estado consulta: " << ret;
-  if (query.next()){
-      qDebug() << "el next";
-      return query;
-    }else{
-      qDebug() << "no hubo next";
-      return QSqlQuery();
-    }
 
+  return ret;
 }
 
 void QDatabase::closeDB(){
   if (db.open()){
       db.close();
-  }
+    }
 }
 
 QDatabase::~QDatabase()
 {
-    closeDB();
+  closeDB();
 }
