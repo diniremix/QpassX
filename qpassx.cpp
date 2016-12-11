@@ -22,21 +22,11 @@ void QpassX::on_actionQuit_triggered()
 
 void QpassX::on_actionNew_triggered()
 {
-  qDebug() << "on_actionNew_triggered";
-  QString fileName = QFileDialog::getSaveFileName(this,
-                                                  tr("Create new Database"), "",
-                                                  tr("QpassX Databse (*.qdbx);;All Files (*)"));
 
 
-  if (fileName.isEmpty()){
-      return;
-    }
-  else {
-      //create db
-      if(db->createDB(fileName)){
-          qDebug() << "create db";
-      }
-    }
+  formnew *formnewdb = new formnew();
+  formnewdb->setWindowModality(Qt::ApplicationModal);
+  formnewdb->show();
 }
 
 void QpassX::on_actionOpen_triggered()
@@ -57,11 +47,11 @@ void QpassX::on_actionOpen_triggered()
          //mylist.append("jorge");
          QString qpass= "jorge1";
          //db->select(tables, fields,"psswd="+qpass);
-         QSqlQuery result;
+         int result;
 
          result= db->execQuery(tr("select usrnm, psswd from qpassxscheme where psswd='%1'").arg(qpass),"");
-         if(result.isValid()){
-             qDebug() << "result:"<<result.value(0).toString();
+         if(result==true){
+             qDebug() << "result:"<<result;
          }else{
              qDebug() << "result: fail no es valid";
            }

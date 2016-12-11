@@ -5,6 +5,9 @@
 #include "qdatabase.h"
 #include <QFileDialog>
 
+#include "formnew.h"
+
+
 namespace Ui {
   class QpassX;
 }
