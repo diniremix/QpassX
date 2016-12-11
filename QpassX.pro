@@ -16,12 +16,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         qpassx.cpp \
-    qdatabase.cpp
+    qdatabase.cpp \
+    formnew.cpp \
+    auth.cpp
 
 HEADERS  += qpassx.h \
-    qdatabase.h
+    qdatabase.h \
+    formnew.h \
+    auth.h
 
-FORMS    += qpassx.ui
+FORMS    += qpassx.ui \
+    formnew.ui
 
 RESOURCES += \
     resources.qrc
