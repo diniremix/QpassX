@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "qdatabase.h"
 #include <QFileDialog>
+#include <QTreeWidgetItem>
 
 #include "formnew.h"
 
@@ -56,6 +57,12 @@ private slots:
   void on_actionCopy_password_triggered();
 
   void on_actionOpen_url_triggered();
+
+  void on_treeWidget_itemClicked(QTreeWidgetItem *item, int column);
+
+  void on_treeWidget_itemChanged(QTreeWidgetItem *item, int column);
+
+  void on_treeWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous);
 
 private:
   Ui::QpassX *ui;

@@ -122,11 +122,21 @@ void QpassX::on_actionEdit_entry_triggered()
 
 void QpassX::on_actionDelete_entry_triggered()
 {
-
+    qDebug() << "on_actionDelete_entry_triggered";
 }
 
 void QpassX::on_actionNew_entry_triggered()
 {
+    qDebug() << "on_actionNew_entry_triggered";
+    QTreeWidgetItem *groups = new QTreeWidgetItem(ui->treeWidget);
+    groups->setText(0, tr("Cities"));
+    groups->setFlags(groups->flags()|Qt::ItemIsEditable);
+
+
+
+    //groups->setFlags(eflag);
+    /*QTreeWidgetItem *osloItem = new QTreeWidgetItem(cities);
+        osloItem->setText(0, tr("Oslo"));*/
 
 }
 
@@ -143,4 +153,21 @@ void QpassX::on_actionCopy_password_triggered()
 void QpassX::on_actionOpen_url_triggered()
 {
 
+}
+
+void QpassX::on_treeWidget_itemClicked(QTreeWidgetItem *item, int column)
+{
+    qDebug() << "on_treeWidget_itemClicked";
+}
+
+void QpassX::on_treeWidget_itemChanged(QTreeWidgetItem *item, int column)
+{
+    /*qDebug() << "on_treeWidget_itemChanged"<<"col"<<column<<"texto"<<item->text(column);
+    Qt::ItemFlags fl = item->flags();
+    qDebug() << fl;*/
+}
+
+void QpassX::on_treeWidget_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *previous)
+{
+    qDebug() << "on_treeWidget_currentItemChanged"<< current->text(0);
 }
