@@ -272,8 +272,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/c,qt,c++,cmake,linux,macos,windows,qtcreator,sublimetext,visualstudiocode
-
 #Folder apps
 .idea/*
 .vscode/*
@@ -283,3 +281,5 @@ build/*
 # another files
 *.db
 *.sublime-workspace
+
+# End of https://www.gitignore.io/api/c,qt,c++,cmake,linux,macos,windows,qtcreator,sublimetext,visualstudiocode
