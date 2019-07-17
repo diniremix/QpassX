@@ -1,32 +1,21 @@
 #-------------------------------------------------
+# Author:
+#	Jorge Brunal A.K.A. Diniremix: https://github.com/diniremix
 #
-# Project created by QtCreator 2016-12-04T21:49:19
+# Copyright:
+#    Copyright (C) 2016-2019 Jorge Brunal A.K.A. Diniremix
+#
+# License:	LGPL-2.1
+# The full text of the licenses can be found in the LGPL' files.
+#
+# Project created by QtCreator 2019-07-16T23:12:34
 #
 #-------------------------------------------------
 
-QT       += core gui
+TEMPLATE = subdirs
+CONFIG+=ordered
 
-QT+=sql
+SUBDIRS = \
+   src
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
-TARGET = QpassX
-TEMPLATE = app
-
-
-SOURCES += main.cpp\
-        qpassx.cpp \
-    qdatabase.cpp \
-    formnew.cpp \
-    auth.cpp
-
-HEADERS  += qpassx.h \
-    qdatabase.h \
-    formnew.h \
-    auth.h
-
-FORMS    += qpassx.ui \
-    formnew.ui
-
-RESOURCES += \
-    resources.qrc
+DESTDIR = $$PWD/../build

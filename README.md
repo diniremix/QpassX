@@ -3,7 +3,7 @@
 
 
 ## Requeriments
-- [Qt](https://www.qt.io/download/)  5.7.x
+- [Qt](https://www.qt.io/download/)  5.12.x
 
 
 ## How to use
